@@ -180,7 +180,8 @@
 				<input type="radio" id="form5Gender3" value="custom" name="form5Gender">
 				<label for="form5Gender3">Custom</label>
 				<input type="button" id="form5Gender3-Fileupload-fake" name="custom-fake" value="Upload custom gender (max 10MB)" disabled="true">
-				<input type="file" id="form5Gender3-File" name="custom" hidden="true"><br><br>
+				<input type="file" id="form5Gender3-File" name="custom" hidden="true">
+				<label for="form5Gender3-File" id="form5Gender3-File-Label"></label><br><br>
 				<input type="button" id="form5Submit" value="Submit">
 			</form>
 			<script>
@@ -189,8 +190,8 @@
 					document.getElementById("form5Gender3-File").click();
 				});
 
-				document.getElementById("form5Gender3-Fileupload-fake").action = function() {
-					// console.log("Clicked on the thingy");
+				document.getElementById("form5Gender3-File").onchange = function() {
+					document.getElementById("form5Gender3-File-Label").innerHTML = this.value;
 				};
 
 				document.getElementById("form5Gender3").onchange = function() {
